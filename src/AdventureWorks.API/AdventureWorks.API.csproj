@@ -27,4 +27,9 @@
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="4.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\AdventureWorks.Domain\AdventureWorks.Domain.csproj" />
+    <ProjectReference Include="..\AdventureWorks.Infra\AdventureWorks.Infra.csproj" />
+  </ItemGroup>
+
 </Project>

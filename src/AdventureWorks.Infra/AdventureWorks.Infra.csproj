@@ -5,11 +5,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="HumanResourcesContext\Services\" />
-    <Folder Include="HumanResourcesContext\Repositories\" />
+    <Folder Include="AdventureWorksContext\Services\" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Dapper" Version="1.50.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AdventureWorks.Domain\AdventureWorks.Domain.csproj" />
     <ProjectReference Include="..\AdventureWorks.Shared\AdventureWorks.Shared.csproj" />
   </ItemGroup>
 

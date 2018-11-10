@@ -4,13 +4,13 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Text;
 
-namespace AdventureWorks.Infra.HumanResourcesContext.DataContext
+namespace AdventureWorks.Infra.AdventureWorksContext.DataContext
 {
-    public class HumanResourcesContext : IDisposable
+    public class AdventureWorksDBContext : IDisposable
     {
         public SqlConnection Connection { get; private set; }
 
-        public HumanResourcesContext()
+        public AdventureWorksDBContext()
         {
             Connection = new SqlConnection(Settings.ConnectionStringDev);
             Connection.Open();

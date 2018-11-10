@@ -4,4 +4,13 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="8.0.100" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="HumanResourcesContext\Commands\Inputs\" />
+    <Folder Include="HumanResourcesContext\Commands\Outputs\" />
+  </ItemGroup>
+
 </Project>

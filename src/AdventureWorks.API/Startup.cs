@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AdventureWorks.API.AdventureWorks.Infra.AdventureWorksContext.Repositories;
+using AdventureWorks.Domain.HumanResourcesContext.Repositories;
+using AdventureWorks.Infra.AdventureWorksContext.DataContext;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -28,6 +31,11 @@ namespace AdventureWorks.API
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
+            services.AddResponseCompression();
+
+            services.AddScoped<AdventureWorksDBContext, AdventureWorksDBContext>();
+            services.AddTransient<IEmployeeRepository, EmployeeRepository>();
+
             //Add swagger
             services.AddSwaggerGen(x=> 
             {
@@ -49,6 +57,7 @@ namespace AdventureWorks.API
 
             app.UseHttpsRedirection();
             app.UseMvc();
+            app.UseResponseCompression();
 
             app.UseSwagger();
             app.UseSwaggerUI(c =>
